@@ -3,6 +3,7 @@ package com.sachin.risk.firewall.model;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * @author shicheng.zhang
@@ -31,7 +32,11 @@ public class EventDTO implements Serializable {
      */
     private String orgId;
     /**
-     * 预留扩展信息
+     * 会话ID
+     */
+    private String sessionId = new Date().getTime() + "-" + UUID.randomUUID().toString();
+    /**
+     * 扩展信息
      */
     private Map<String, Object> extInfo;
 
@@ -75,6 +80,10 @@ public class EventDTO implements Serializable {
         this.orgId = orgId;
     }
 
+    public String getSessionId() {
+        return sessionId;
+    }
+
     public Map<String, Object> getExtInfo() {
         return extInfo;
     }
@@ -91,6 +100,7 @@ public class EventDTO implements Serializable {
                 ", serverId='" + serverId + '\'' +
                 ", requestType='" + requestType + '\'' +
                 ", orgId='" + orgId + '\'' +
+                ", sessionId='" + sessionId + '\'' +
                 ", extInfo=" + extInfo +
                 '}';
     }

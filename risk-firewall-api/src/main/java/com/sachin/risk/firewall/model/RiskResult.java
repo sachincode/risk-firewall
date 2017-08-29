@@ -11,18 +11,18 @@ public class RiskResult implements Serializable {
     /**
      * 风控返回码
      */
-    private Long resultCode;
+    private Integer resultCode;
 
     /**
      * 风控结果预留字段，可以传输json格式的字符串
      */
     private String resultInfo;
 
-    public Long getResultCode() {
+    public Integer getResultCode() {
         return resultCode;
     }
 
-    public void setResultCode(Long resultCode) {
+    public void setResultCode(Integer resultCode) {
         this.resultCode = resultCode;
     }
 
