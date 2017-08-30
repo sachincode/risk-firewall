@@ -34,7 +34,7 @@ public class EventDTO implements Serializable {
     /**
      * 会话ID
      */
-    private String sessionId = new Date().getTime() + "-" + UUID.randomUUID().toString();
+    private String sessionId = UUID.randomUUID().toString() + "-" + System.currentTimeMillis();
     /**
      * 扩展信息
      */
